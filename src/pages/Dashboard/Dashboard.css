@@ -1,0 +1,156 @@
+/* src/pages/Dashboard/Dashboard.css */
+.dashboard-container {
+  padding: 20px;
+}
+
+.shoppay-gradient-text {
+  background: linear-gradient(45deg, #FF9A50 0%, #F953C6 50%, #B91D73 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stat card animations */
+.stat-card {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 154, 80, 0.2);
+}
+
+.stat-icon {
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.stat-value {
+  background: linear-gradient(45deg, #FF9A50 0%, #F953C6 50%, #B91D73 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card animations */
+.animated-card {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.animated-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Order list animations */
+.order-item {
+  opacity: 0;
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Chart animations */
+.recharts-bar-rectangle {
+  transition: all 0.3s ease;
+}
+
+.recharts-bar-rectangle:hover {
+  fill-opacity: 0.7;
+}
+
+.recharts-sector {
+  transition: all 0.3s ease;
+}
+
+.recharts-sector:hover {
+  opacity: 0.8;
+  transform-origin: center;
+  transform: scale(1.05);
+}
+
+/* Pulse animation for important elements */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.stat-card:nth-child(1) {
+  animation: pulse 2s infinite 1s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animated-card:hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient background animation */
+.dashboard-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 154, 80, 0.05) 0%, rgba(249, 83, 198, 0.05) 50%, rgba(185, 29, 115, 0.05) 100%);
+  z-index: -1;
+  animation: gradientShift 10s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .dashboard-container {
+    padding: 10px;
+  }
+  
+  .stat-card:hover {
+    transform: none;
+  }
+}

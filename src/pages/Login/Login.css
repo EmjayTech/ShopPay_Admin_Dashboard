@@ -1,0 +1,210 @@
+/* src/pages/Login/Login.css */
+.login-container {
+  min-height: 150vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  
+}
+
+.bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  
+}
+
+.gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 154, 80, 0.1) 0%, rgba(249, 83, 198, 0.1) 50%, rgba(185, 29, 115, 0.1) 100%);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.login-paper {
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 450px;
+  width: 90%;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.shoppay-gradient-text {
+  background: linear-gradient(45deg, #FF9A50 0%, #F953C6 50%, #B91D73 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stars animation */
+#stars, #stars2, #stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#stars {
+  background: transparent url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjEiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC44Ii8+PC9zdmc+') repeat;
+  animation: animStar 50s linear infinite;
+  z-index: 3;
+}
+
+#stars2 {
+  background: transparent url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjAuNSIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjYiLz48L3N2Zz4=') repeat;
+  animation: animStar 100s linear infinite;
+  z-index: 4;
+}
+
+#stars3 {
+  background: transparent url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjAuMjUiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ii8+PC9zdmc+') repeat;
+  animation: animStar 150s linear infinite;
+  z-index: 5;
+}
+
+/* Floating shapes */
+.login-container::before,
+.login-container::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  z-index: 2;
+  animation: float 6s ease-in-out infinite;
+}
+
+.login-container::before {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  left: -150px;
+  background: linear-gradient(45deg, rgba(255, 154, 80, 0.2) 0%, rgba(249, 83, 198, 0.2) 50%, rgba(185, 29, 115, 0.2) 100%);
+  animation-delay: 0s;
+}
+
+.login-container::after {
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  right: -100px;
+  background: linear-gradient(45deg, rgba(185, 29, 115, 0.2) 0%, rgba(249, 83, 198, 0.2) 50%, rgba(255, 154, 80, 0.2) 100%);
+  animation-delay: -2s;
+}
+
+/* Additional floating elements */
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(255, 154, 80, 0.15) 0%, rgba(249, 83, 198, 0.15) 50%, rgba(185, 29, 115, 0.15) 100%);
+  animation: float 8s ease-in-out infinite;
+  z-index: 2;
+}
+
+.floating-element:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+  animation-delay: -1s;
+}
+
+.floating-element:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 10%;
+  animation-delay: -3s;
+}
+
+.floating-element:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: -5s;
+}
+
+/* Animations */
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Pulse animation for the logo */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.shoppay-gradient-text {
+  animation: pulse 3s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .login-paper {
+    width: 85%;
+    padding: 1.5rem;
+  }
+  
+  .login-container::before,
+  .login-container::after {
+    display: none;
+  }
+  
+  .floating-element {
+    display: none;
+  }
+}
